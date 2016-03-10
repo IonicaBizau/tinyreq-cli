@@ -1,0 +1,30 @@
+{
+  "name": "tinyreq-cli",
+  "description": "A cli tool for making http(s) requests. CLI for tinyreq.",
+  "keywords": [
+    "tinyreq",
+    "cli",
+    "a",
+    "tool",
+    "for",
+    "making",
+    "http",
+    "s",
+    "requests"
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/IonicaBizau/tinyreq-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/tinyreq-cli/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/tinyreq-cli#readme"
+}
