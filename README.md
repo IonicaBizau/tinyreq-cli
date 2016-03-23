@@ -1,42 +1,41 @@
-# tinyreq-cli [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/tinyreq-cli.svg)](https://www.npmjs.com/package/tinyreq-cli) [![Downloads](https://img.shields.io/npm/dt/tinyreq-cli.svg)](https://www.npmjs.com/package/tinyreq-cli) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+# `$ tinyreq-cli` [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/tinyreq-cli.svg)](https://www.npmjs.com/package/tinyreq-cli) [![Downloads](https://img.shields.io/npm/dt/tinyreq-cli.svg)](https://www.npmjs.com/package/tinyreq-cli) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
 > A cli tool for making http(s) requests. CLI for tinyreq.
 
-## Installation
+## :cloud: Installation
+
+You can install the package globally and use it as command line tool:
 
 ```sh
-$ npm i --save tinyreq-cli
+$ npm i -g tinyreq-cli
 ```
 
-## Example
+:bulb: **ProTip**: If you want to use this package as module, check out [`tinyreq`—the API version of it](http://github.com/IonicaBizau/tinyreq).
 
-```js
-"use strict";
+Then, run `tinyreq --help` and see what the CLI tool can do.
 
-const tinyreqCli = require("tinyreq-cli");
+```
+$ tinyreq --help
+Usage: tinyreq-cli [options]
 
-console.log(tinyreqCli());
+Options:
+  -u, --url <url>        The request url.                            
+  -m, --method <method>  The request method.                         
+  -d, --data <data>      The request data.                           
+  -f, --fields <fields>  Other fields to merge in the request object.
+  -h, --help             Displays this help.                         
+  -v, --version          Displays version information.               
+
+Examples:
+  tinyreq -u http://ionicabizau.net
+
+Documentation can be found at https://github.com/IonicaBizau/tinyreq-cli#readme
 ```
 
-## Documentation
-
-### `tinyreqCli(a, b)`
-A cli tool for making http(s) requests. CLI for tinyreq.
-
-#### Params
-- **Number** `a`: Param descrpition.
-- **Number** `b`: Param descrpition.
-
-#### Return
-- **Number** Return description.
-
-## How to contribute
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
-## Where is this library used?
-If you are using this library in one of your projects, add it in this list. :sparkles:
-
-## License
+## :scroll: License
 
 [MIT][license] © [Ionică Bizău][website]
 

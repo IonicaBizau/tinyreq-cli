@@ -17,7 +17,7 @@
   ],
   "license": "MIT",
   "version": "1.0.0",
-  "main": "lib/index.js",
+  "main": "tinyreq.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,5 +35,8 @@
     "clp": "^3.2.1",
     "tinyreq": "^2.3.1",
     "ul": "^5.2.1"
+  },
+  "blah": {
+    "api": "tinyreq"
   }
 }
