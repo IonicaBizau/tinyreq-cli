@@ -7,7 +7,7 @@ const tinyreq = require("tinyreq")
     , clp = require("clp")
     , logger = require("bug-killer")
     , ul = require("ul")
-    , pack = require("./package")
+    , pack = require("../package")
     ;
 
 // CLP Parser

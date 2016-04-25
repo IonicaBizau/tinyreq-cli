@@ -2,7 +2,7 @@
   "name": "tinyreq-cli",
   "description": "A cli tool for making http(s) requests. CLI for tinyreq.",
   "bin": {
-    "tinyreq": "tinyreq.js"
+    "tinyreq": "./bin/tinyreq"
   },
   "keywords": [
     "tinyreq",
@@ -17,7 +17,7 @@
   ],
   "license": "MIT",
   "version": "1.0.0",
-  "main": "tinyreq.js",
+  "main": "./bin/tinyreq",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
