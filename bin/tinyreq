@@ -53,7 +53,7 @@ if (options.data && options.method === "GET") {
 // Make the request
 logger.log(options.method + " " + options.url, "info");
 tinyreq(options, function (err, body) {
-    if (err) {
+    if (!options.quiet && err) {
         return logger.log(err, "error");
     }
     !options.quiet && console.log(body);
