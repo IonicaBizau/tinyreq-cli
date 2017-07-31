@@ -15,7 +15,7 @@ let urlOpt = new clp.Option(["u", "url"], "The request url.", "url")
   , methOpt = new clp.Option(["m", "method"], "The request method.", "method")
   , dataOpt = new clp.Option(["d", "data"], "The request data.", "data")
   , fieldsOpt = new clp.Option(["f", "fields"], "Other fields to merge in the request object.", "fields")
-  , quietOpt = new clp.Option(["q", "quiet"], "Ignore the response body", "quiet", "false")
+  , quietOpt = new clp.Option(["q", "quiet"], "Ignore the response body", "quiet")
   ;
 
 new clp({
@@ -34,12 +34,12 @@ let options = ul.merge({
     method: methOpt.value || undefined
   , url: urlOpt.value || undefined
   , data: dataOpt.value || undefined
-  , quiet: quietOpt.value = quietOpt.is_provided
+  , quiet: quietOpt.is_provided
 }, {
     method: "GET"
 });
 if (options.quiet) {
-  logger.config.level = -1;
+  logger.config.level = 1;
 }
 if (!options.url) {
     return logger.log("Missing the request url.", "error");
