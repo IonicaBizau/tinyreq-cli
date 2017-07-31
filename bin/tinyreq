@@ -56,5 +56,5 @@ tinyreq(options, function (err, body) {
     if (err) {
         return logger.log(err, "error");
     }
-    logger.log(body);
+    !options.quiet && console.log(body);
 });
