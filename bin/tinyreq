@@ -34,29 +34,27 @@ let options = ul.merge({
     method: methOpt.value || undefined
   , url: urlOpt.value || undefined
   , data: dataOpt.value || undefined
-  , quiet: quietOpt.value != 'false'
+  , quiet: quietOpt.value = quietOpt.is_provided
 }, {
     method: "GET"
 });
-
-if (!options.url && !options.quiet) {
+if (options.quiet) {
+  logger.config.level = -1;
+}
+if (!options.url) {
     return logger.log("Missing the request url.", "error");
 }
 
-if (options.data && options.method === "GET" && !optons.quiet) {
+if (options.data && options.method === "GET") {
     logger.log("Making a POST request since you send data.", "warn");
     options.method = "POST";
 }
 
 // Make the request
-if (!options.quiet) {
-    logger.log(options.method + " " + options.url, "info");
-}
+logger.log(options.method + " " + options.url, "info");
 tinyreq(options, function (err, body) {
-    if (err && !options.quiet) {
+    if (err) {
         return logger.log(err, "error");
     }
-    if(!options.quiet) {
-        console.log(body);
-    }
+    logger.log(body);
 });
