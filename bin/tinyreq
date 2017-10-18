@@ -15,6 +15,7 @@ let urlOpt = new clp.Option(["u", "url"], "The request url.", "url")
   , methOpt = new clp.Option(["m", "method"], "The request method.", "method")
   , dataOpt = new clp.Option(["d", "data"], "The request data.", "data")
   , fieldsOpt = new clp.Option(["f", "fields"], "Other fields to merge in the request object.", "fields")
+  , quietOpt = new clp.Option(["q", "quiet"], "Ignore the response body", "quiet")
   ;
 
 new clp({
@@ -26,17 +27,20 @@ new clp({
   , examples: [
         "tinyreq -u http://ionicabizau.net"
     ]
-}, [urlOpt, methOpt, dataOpt, fieldsOpt]);
+}, [urlOpt, methOpt, dataOpt, fieldsOpt, quietOpt]);
 
 // Merge the options
 let options = ul.merge({
     method: methOpt.value || undefined
   , url: urlOpt.value || undefined
   , data: dataOpt.value || undefined
+  , quiet: quietOpt.is_provided
 }, {
     method: "GET"
 });
-
+if (options.quiet) {
+  logger.config.level = 1;
+}
 if (!options.url) {
     return logger.log("Missing the request url.", "error");
 }
@@ -49,8 +53,8 @@ if (options.data && options.method === "GET") {
 // Make the request
 logger.log(options.method + " " + options.url, "info");
 tinyreq(options, function (err, body) {
-    if (err) {
+    if (!options.quiet && err) {
         return logger.log(err, "error");
     }
-    console.log(body);
+    !options.quiet && console.log(body);
 });
